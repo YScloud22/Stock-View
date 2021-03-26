@@ -31,7 +31,7 @@ def data():
     
         for i in subs_list:
             subreddit = reddit.subreddit(i)
-            top_python = subreddit.top("day", limit=100)  # 1000 is limit
+            top_python = subreddit.top("day", limit=1)  # 1000 is limit
             day_count += counter(top_python, stock_ticker, company)
         return day_count
     def week(stock_ticker, company):
@@ -41,7 +41,7 @@ def data():
         week_count = 0
         for i in subs_list:
             subreddit = reddit.subreddit(i)
-            top_python = subreddit.top("week", limit=100)  # 1000 is limit
+            top_python = subreddit.top("week", limit=1)  # 1000 is limit
             week_count += counter(top_python, stock_ticker, company)
         return week_count
     def month(stock_ticker, company):
@@ -51,7 +51,7 @@ def data():
         month_count = 0
         for i in subs_list:
             subreddit = reddit.subreddit(i)
-            top_python = subreddit.top("month", limit=100)  # 1000 is limit
+            top_python = subreddit.top("month", limit=1)  # 1000 is limit
             month_count += counter(top_python, stock_ticker, company)
         return month_count
     def counter(time_filter, stock_ticker, company):
@@ -67,12 +67,19 @@ def data():
     week = week(stock_ticker, company)
     month = month(stock_ticker, company)
 
+    data = [("day",day), ("week",week), ("month",month)] #change numbers to actual mentions later
+    labels = [row[0] for row in data]
+    values = [row[1] for row in data]
+
+
     return render_template("data.html", 
     stock_ticker = stock_ticker, 
     company = company,
     day = day, 
     week = week, 
     month = month, 
+    labels = labels, 
+    values = values
     )
 
 @pages.route('/', methods=['GET','POST'])
