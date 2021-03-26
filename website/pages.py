@@ -30,3 +30,10 @@ def home():
             return render_template("base.html")
         else: return loadingPage()
     return render_template("base.html")
+
+@pages.route('/graph', methods = ['GET', 'POST'])
+def graph(): 
+    data = [10, 20, 15]
+    labels = [row[0] for row in data]
+    values = [row[1] for row in data]
+    return render_template("graph.html", labels=labels, values=values)
