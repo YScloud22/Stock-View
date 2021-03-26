@@ -2,7 +2,7 @@ from flask import Blueprint, render_template, request, flash
 import sys
 import praw
 import re
-import stocks.py
+# import stocks.py
 
 
 pages = Blueprint('pages', __name__)
