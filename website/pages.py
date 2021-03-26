@@ -29,7 +29,7 @@ def home():
             return render_template("base.html")
         if len(company) == 0: 
             return render_template("base.html")
-        else: return loadingPage()
+        else: return data()
     return render_template("base.html")
 
 @pages.route('/graph', methods = ['GET', 'POST'])

@@ -1,5 +1,22 @@
 {% extends "base.html" %}
 <link rel="stylesheet" href ="{{ url_for('static', filename= 'main.css')}}">
+{% block title %}{{company.capitalize()}}{% endblock %}
 {% block body %}
-<h2>{{stock_ticker}} {{company}}</h2>   
+<div class = "data_page_top">
+    <h1>{{stock_ticker.upper()}}: {{company.capitalize()}}</h2>
+        <br>
+        <br> 
+</div>  
+
+<div class = "data_list_mentions">
+    <dl>
+        <dt>Todays Mentions: </dt>
+        <br> 
+        <br>
+        <dt>Weekly Mentions: </dt>
+        <br> 
+        <br>
+        <dt>Monthly Mentions: </dt>
+    </dl>
+</div>
 {% endblock %}

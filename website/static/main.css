@@ -20,6 +20,7 @@ html{
     text-align: center;
     font-size: 25px;
     color: #394B59;
+    font-family: "Blender","Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 
 label.stock_ticker{
@@ -83,4 +84,16 @@ button.search_stock:hover{
   h2.loading_text{
       margin-top: 40px;
       text-align: center;
+  }
+
+  .data_page_top {
+      text-align: center;
+      font-family: "Blender","Helvetica Neue",Helvetica,Arial,sans-serif;
+  }
+
+  .data_list_mentions{
+      margin-left: 50px;
+      font-size: 25px;
+      font-weight: bold;
+      font-family: "Blender","Helvetica Neue",Helvetica,Arial,sans-serif;
   }
