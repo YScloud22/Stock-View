@@ -1,0 +1,5 @@
+{% extends "base.html" %}
+<link rel="stylesheet" href ="{{ url_for('static', filename= 'main.css')}}">
+{% block body %}
+<h2>{{stock_ticker}} {{company}}</h2>   
+{% endblock %}
