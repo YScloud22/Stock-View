@@ -2,6 +2,7 @@ from flask import Blueprint, render_template, request, flash
 import sys
 import praw
 import re
+import stocks.py
 
 
 pages = Blueprint('pages', __name__)
@@ -33,7 +34,7 @@ def home():
 
 @pages.route('/graph', methods = ['GET', 'POST'])
 def graph(): 
-    data = [10, 20, 15]
+    data = [("day",10), ("week",20), ("month",15)]
     labels = [row[0] for row in data]
     values = [row[1] for row in data]
     return render_template("graph.html", labels=labels, values=values)
