@@ -62,9 +62,9 @@ def counter(time_filter, stock_ticker, company):
     return count
 
 
-stock_ticker = str(input("Enter stock ticker: ")).lower()
+stock_ticker = str().lower()
 
-company = str(input("Enter company name: ")).lower()
+company = str().lower()
 
 flag_loading = False
 
