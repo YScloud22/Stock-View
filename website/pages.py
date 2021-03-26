@@ -3,6 +3,6 @@ import sys
 
 pages = Blueprint('pages', __name__)
 
-@pages.route('/home', methods=['GET','POST'])
+@pages.route('/', methods=['GET','POST'])
 def home():
     return render_template("base.html")
