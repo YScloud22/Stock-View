@@ -8,38 +8,41 @@ reddit = praw.Reddit(
         password="redditbot",
         user_agent="redditscrape")
 
-
-def main(stock_ticker, company):
-
+def day(stock_ticker, company):
     subs_list = ["stocks", "investing", "wallstreetbets",
                  "options", "StockMarket", "pennystocks",
                  "thetagang", "smallstreetbets"]
 
     day_count = 0
-    week_count = 0
-    month_count = 0
-
     for i in subs_list:
         subreddit = reddit.subreddit(i)
         top_python = subreddit.top("day", limit=1000)  # 1000 is limit
         day_count += counter(top_python, stock_ticker, company)
+    return day_count
 
-    print("Today's mentions are", day_count)
 
-    for i in subs_list:
-        subreddit = reddit.subreddit(i)
-        top_python = subreddit.top("week", limit=1000)  # 1000 is limit
-        week_count += counter(top_python, stock_ticker, company)
-
-    print("Week's mentions are", week_count)
-
+def week(stock_ticker, company):
+    subs_list = ["stocks", "investing", "wallstreetbets",
+                 "options", "StockMarket", "pennystocks",
+                 "thetagang", "smallstreetbets"]
+    week_count = 0
     for i in subs_list:
         subreddit = reddit.subreddit(i)
         top_python = subreddit.top("month", limit=1000)  # 1000 is limit
         month_count += counter(top_python, stock_ticker, company)
+    return week_count
 
-    print("Month's mentions are", month_count)
 
+def month(stock_ticker, company):
+    subs_list = ["stocks", "investing", "wallstreetbets",
+                 "options", "StockMarket", "pennystocks",
+                 "thetagang", "smallstreetbets"]
+    month_count = 0
+    for i in subs_list:
+        subreddit = reddit.subreddit(i)
+        top_python = subreddit.top("month", limit=1000)  # 1000 is limit
+        month_count += counter(top_python, stock_ticker, company)
+    return month_count
 
 def counter(time_filter, stock_ticker, company):
     count = 0
@@ -63,5 +66,6 @@ stock_ticker = str(input("Enter stock ticker: ")).lower()
 
 company = str(input("Enter company name: ")).lower()
 
-print("Disclaimer: Only up to top 1000 posts of each subreddit's day, week, and month will be scanned.")
-main(stock_ticker, company)
+day = day(stock_ticker, company)
+week = week(stock_ticker, company)
+month = month(stock_ticker, company)
