@@ -66,6 +66,10 @@ stock_ticker = str(input("Enter stock ticker: ")).lower()
 
 company = str(input("Enter company name: ")).lower()
 
+flag_loading = False
+
 day = day(stock_ticker, company)
 week = week(stock_ticker, company)
 month = month(stock_ticker, company)
+
+flag_loading = True
