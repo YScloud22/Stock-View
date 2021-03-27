@@ -87,20 +87,29 @@ button.search_stock:hover{
   }
 
   .data_page_top {
-      text-align: center;
+      margin-top: 40px;
+      text-align: center; 
       font-family: "Blender","Helvetica Neue",Helvetica,Arial,sans-serif;
   }
 
   .data_list_mentions{
-      margin-left: 160px;
+      text-align: center;
       font-size: 25px;
       font-weight: bold;
       font-family: "Blender","Helvetica Neue",Helvetica,Arial,sans-serif;
   }
 
   .data_graph{
-      margin-left: 80px;
+      margin-left: 10px;
       background-color: white;
-      margin-top: 20px;
+      margin-top: 0px;
+  }
+
+  .bigboy_con {
+      margin-left: 150px;
+      background-color: white;
+      width: 370px;
+      height: 650px;
+      border-radius: 20px;
   }
   
