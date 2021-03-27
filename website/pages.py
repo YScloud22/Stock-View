@@ -7,6 +7,10 @@ import re
 
 pages = Blueprint('pages', __name__)
 
+@pages.route('/newloading', methods = ['GET','POST'])
+def newloadingPage():
+    return render_template("newloading.html")
+
 @pages.route('/loading', methods = ['GET','POST'])
 def loadingPage():
     return render_template("loading_page.html")
@@ -99,3 +103,4 @@ def graph():
     labels = [row[0] for row in data]
     values = [row[1] for row in data]
     return render_template("graph.html", labels=labels, values=values)
+
