@@ -22,11 +22,13 @@ def data():
         username="jujutsuGojo",
         password="redditbot",
         user_agent="redditscrape")
-    
-    def day(stock_ticker, company):
-        subs_list = ["stocks", "investing", "wallstreetbets",
+
+    subs_list = ["stocks", "investing", "wallstreetbets",
                  "options", "StockMarket", "pennystocks",
                  "thetagang", "smallstreetbets"]
+
+    def day(stock_ticker, company, subs_list = subs_list):
+        
         day_count = 0
     
         for i in subs_list:
@@ -34,20 +36,15 @@ def data():
             top_python = subreddit.top("day", limit=1)  # 1000 is limit
             day_count += counter(top_python, stock_ticker, company)
         return day_count
-    def week(stock_ticker, company):
-        subs_list = ["stocks", "investing", "wallstreetbets",
-                 "options", "StockMarket", "pennystocks",
-                 "thetagang", "smallstreetbets"]
+    def week(stock_ticker, company,subs_list = subs_list):
+       
         week_count = 0
         for i in subs_list:
             subreddit = reddit.subreddit(i)
             top_python = subreddit.top("week", limit=1)  # 1000 is limit
             week_count += counter(top_python, stock_ticker, company)
         return week_count
-    def month(stock_ticker, company):
-        subs_list = ["stocks", "investing", "wallstreetbets",
-                 "options", "StockMarket", "pennystocks",
-                 "thetagang", "smallstreetbets"]
+    def month(stock_ticker, company, subs_list = subs_list):
         month_count = 0
         for i in subs_list:
             subreddit = reddit.subreddit(i)
