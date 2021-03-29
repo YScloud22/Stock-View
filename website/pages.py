@@ -35,7 +35,7 @@ def data():
     
         for i in subs_list:
             subreddit = reddit.subreddit(i)
-            top_python = subreddit.top("day", limit=1000)  # 1000 is limit
+            top_python = subreddit.top("day", limit=100)  # 1000 is limit
             day_count += counter(top_python, stock_ticker, company)
         return day_count
     def week(stock_ticker, company,subs_list = subs_list):
@@ -43,14 +43,14 @@ def data():
         week_count = 0
         for i in subs_list:
             subreddit = reddit.subreddit(i)
-            top_python = subreddit.top("week", limit=1000)  # 1000 is limit
+            top_python = subreddit.top("week", limit=100)  # 1000 is limit
             week_count += counter(top_python, stock_ticker, company)
         return week_count
     def month(stock_ticker, company, subs_list = subs_list):
         month_count = 0
         for i in subs_list:
             subreddit = reddit.subreddit(i)
-            top_python = subreddit.top("month", limit=1000)  # 1000 is limit
+            top_python = subreddit.top("month", limit=100)  # 1000 is limit
             month_count += counter(top_python, stock_ticker, company)
         return month_count
     def counter(time_filter, stock_ticker, company):
