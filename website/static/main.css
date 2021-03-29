@@ -106,7 +106,7 @@ button.search_stock:hover{
   }
 
   .bigboy_con {
-      margin-left: 150px;
+      margin: auto;
       background-color: white;
       width: 370px;
       height: 650px;
@@ -115,13 +115,6 @@ button.search_stock:hover{
   
 
 /* code below are for newloading */
-  body {
-    margin: 0;
-    padding: 0;
-    width:100vw;
-    height: 100vh;
-    background-color: #eee;
-  }
   .content {
     display: flex;
     justify-content: center;
@@ -135,7 +128,7 @@ button.search_stock:hover{
     position: absolute;
     top: 0;
     left: 0;
-    background-color: #242f3f;
+    background-color: #394B59;
     display:flex;
     justify-content: center;
     align-items: center;
@@ -169,3 +162,5 @@ button.search_stock:hover{
     75% { height: 100%;}
     100% { height: 0%;}
   }
+  
+
